@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"> <!-- bean definitions here -->
+
+    <bean id="Student" class="org.example.Student">
+        <property name="id" value="125" />
+        <property name="name" value="Mario" />
+        <property name="ph">
+        <list>
+            <ref bean="Phone 1" />
+            <ref bean="Phone 2" />
+            <ref bean="Phone 3" />
+        </list>
+        </property>
+
+        <property name="add" ref="Address" />
+    </bean>
+
+    <bean id="Phone 1" class="org.example.Phone">
+        <property name="mob" value="513-654-7773" />
+    </bean>
+
+    <bean id="Phone 2" class="org.example.Phone">
+        <property name="mob" value="7231-162-4763" />
+    </bean>
+
+    <bean id="Phone 3" class="org.example.Phone">
+        <property name="mob" value="632-156-5436" />
+    </bean>
+
+    <bean id="Address" class="org.example.Address">
+        <property name="city" value="Rome" />
+        <property name="state" value="Lazio" />
+        <property name="country" value="Italy" />
+        <property name="zipcode" value="51513" />
+    </bean>
+</beans>
